@@ -4,3 +4,13 @@ on:
       - main
     paths:
       - 'src/**'
+jobs:
+  upload-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: my-artifact
+          path: my_file.txt
+          retention-days: 1
